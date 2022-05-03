@@ -31,7 +31,7 @@ void stop()
 }
 
 void publish_message(MQTT::Client<MQTTNetwork, Countdown>* client) {
-        while(genXYZ)
+        if(genXYZ)
         {
             MQTT::Message message;
             char buff[100];
@@ -45,7 +45,6 @@ void publish_message(MQTT::Client<MQTTNetwork, Countdown>* client) {
             int rc = client->publish(topic, message);
 
             printf("%s\r\n", buff);
-            ThisThread::sleep_for(100ms);
         }
 }
 
