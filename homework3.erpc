@@ -1,0 +1,13 @@
+/*!
+ * You can write copyrights rules here. These rules will be copied into the outputs.
+ */
+
+//@outputDir("erpc_outputs") // output directory
+
+program controller; // specify name of output files
+
+interface SwitchService // cover functions for same topic
+{
+    start() -> void
+    stop() -> void
+}
